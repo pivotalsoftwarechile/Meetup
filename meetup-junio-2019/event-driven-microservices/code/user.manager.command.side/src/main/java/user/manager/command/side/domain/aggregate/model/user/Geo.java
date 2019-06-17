@@ -1,8 +1,9 @@
 package user.manager.command.side.domain.aggregate.model.user;
 
-import lombok.Value;
+import lombok.Data;
+import java.util.Optional;
 
-@Value
+@Data
 public class Geo {
 	
     private final Identifier geoId;
@@ -11,11 +12,11 @@ public class Geo {
     private final Location province;
     private final Location region;
     private final Location country;
-    private final Double latitude;
-    private final Double longitude;
+    private final Optional<Double> latitude;
+    private final Optional<Double> longitude;
     
     
-	public Geo(Identifier geoId, Location city, Location comune, Location province, Location region, Location country, Double latitude,Double longitude) {	
+	public Geo(Identifier geoId, Location city, Location comune, Location province, Location region, Location country, Optional<Double> latitude, Optional<Double> longitude) {
 		this.geoId = geoId;
 		this.city =  city;				
 		this.comune = comune;				
@@ -23,13 +24,8 @@ public class Geo {
 		this.region = region;				
 		this.country = country;
 		//
-		this.latitude = new Double(latitude);
-		this.longitude = new Double(longitude);
-	}    
-	
-	@Override
-	protected Object clone() throws CloneNotSupportedException {		
-		return new Geo(geoId, city, comune, province, region, country, latitude, longitude);
+		this.latitude = latitude;
+		this.longitude = longitude;
 	}
 }
      

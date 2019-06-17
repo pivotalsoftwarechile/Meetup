@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="user.manager.command.side.infraestructure.persistence.mybatis.mapper.RoleMapper">
+   
+   <insert id="addPartyRole"
+   				 parameterType="user.manager.command.side.infraestructure.dto.RoleDto">
+    	INSERT INTO PARTY_ROLE (PARTY_ID,
+    					   		ROLE_TYPE_ID,    					   
+    					   		DESCRIPTION) 
+    	VALUES (#{partyId,jdbcType=BIGINT},
+    		    #{roleTypeId,jdbcType=VARCHAR},    		     
+    		    #{description,jdbcType=VARCHAR})
+   </insert>  
+	
+</mapper>

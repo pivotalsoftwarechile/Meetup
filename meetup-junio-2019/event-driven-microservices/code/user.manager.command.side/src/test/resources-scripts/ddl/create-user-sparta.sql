@@ -1,2 +1,0 @@
-CREATE USER sparta IDENTIFIED BY sparta;
-GRANT DBA TO sparta;
