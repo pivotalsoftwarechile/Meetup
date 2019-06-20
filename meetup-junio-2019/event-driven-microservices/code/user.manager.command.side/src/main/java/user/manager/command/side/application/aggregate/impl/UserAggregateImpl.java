@@ -44,7 +44,7 @@ public class UserAggregateImpl extends UserAggregate {
             if(addPerson.isPresent()){
                 //TODO return success message
             }else{
-                //TODO returns fail success message
+                //TODO returns fail message
             }
         }else{
             //TODO returns fail message
@@ -75,7 +75,7 @@ public class UserAggregateImpl extends UserAggregate {
             if(addGroup.isPresent()){
                 //TODO return success message
             }else{
-                //TODO returns success message
+                //TODO returns fail message
             }
         }else{
             //TODO returns fail message
