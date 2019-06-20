@@ -77,7 +77,8 @@ public class UserCommandSideMvcConfig implements WebMvcConfigurer {
                 .apis(RequestHandlerSelectors
                         .basePackage("user.manager.command.side.infraestructure.api"))
                 .paths(PathSelectors.regex("/.*"))
-                .build().apiInfo(apiEndPointsInfo());
+                .build()
+        .apiInfo(apiEndPointsInfo());
     }
 
     /**
@@ -86,8 +87,9 @@ public class UserCommandSideMvcConfig implements WebMvcConfigurer {
      * @return la informacion para la api
      */
     private ApiInfo apiEndPointsInfo() {
-        return new ApiInfoBuilder().title("User Manager Command Side REST API")
-                .description("REST API que mantiene las operaciones relacionados con el dominio de los usuarios")
+        return new ApiInfoBuilder()
+                .title("User Manager Command Side REST API")
+                    .description("REST API que mantiene las operaciones relacionados con el dominio de los usuarios")
                     .version(UtilProperties.USER_COMMAND_SIDE_FINAL_VERSION_PROPERTY_VALUE)
                 .build();
     }

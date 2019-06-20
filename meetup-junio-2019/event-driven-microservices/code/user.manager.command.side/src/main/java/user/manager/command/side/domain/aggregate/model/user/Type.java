@@ -5,10 +5,10 @@ import lombok.Value;
 @Value
 public class Type {
 	
-    private final Identifier typeId;  
+    private final Identifier typeId;
             
     public Type(Identifier typeId){
-    	this.typeId = typeId;   	
+    	this.typeId = typeId;
     }	
     
     

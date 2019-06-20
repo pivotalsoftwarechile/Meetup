@@ -8,8 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import user.manager.command.side.infraestructure.config.UserCommandSideConfig;
 import user.manager.command.side.infraestructure.dto.PartyDto;
-import user.manager.command.side.infraestructure.enums.PartyStatusEnum;
-import user.manager.command.side.infraestructure.enums.PartyTypeEnum;
+import user.manager.command.side.infraestructure.enums.UserStatusEnum;
+import user.manager.command.side.infraestructure.enums.UserTypeEnum;
 import user.manager.command.side.infraestructure.persistence.mybatis.dao.PartyDao;
 
 import java.util.Date;
@@ -33,7 +33,6 @@ public class PartyDaoITest {
         Assert.assertTrue(identifier > 0);
     }
 
-
     @Test
     public void savePartyPerson()  {
         //
@@ -45,9 +44,9 @@ public class PartyDaoITest {
         partyDto.setSocialIdentifier("111111111");
         partyDto.setFirstName("Bart");
         partyDto.setLastName("Simpson");
-        partyDto.setPartyType(PartyTypeEnum.PERSON.getPartyTypeId());
+        partyDto.setPartyType(UserTypeEnum.PERSON.getTypeId());
         partyDto.setDescription("Personaje de la serie los Simpson");
-        partyDto.setStatusId(PartyStatusEnum.ENABLED.getPartyStatusId());
+        partyDto.setStatusId(UserStatusEnum.ENABLED.getStatusId());
         //
         partyDto.setCreatedDate(new Date());
         partyDto.setCreateByUserLogin("dcarvajal");
@@ -57,6 +56,31 @@ public class PartyDaoITest {
         boolean isSaved = partyDao.saveParty(partyDto);
         Assert.assertTrue(isSaved);
         boolean isSavedPerson = partyDao.savePerson(partyDto);
+        Assert.assertTrue(isSavedPerson);
+    }
+
+    @Test
+    public void savePartyGroup()  {
+        //
+        long partyId = partyDao.nexValueForIdentifier();
+        Assert.assertTrue(partyId > 0);
+
+        PartyDto partyDto = new PartyDto();
+        partyDto.setPartyId(partyId);
+        partyDto.setSocialIdentifier("111111111");
+        partyDto.setGroupName("El bar de Moe");
+        partyDto.setPartyType(UserTypeEnum.PARTY_GROUP.getTypeId());
+        partyDto.setDescription("El bar de Homero :-)");
+        partyDto.setStatusId(UserStatusEnum.ENABLED.getStatusId());
+        //
+        partyDto.setCreatedDate(new Date());
+        partyDto.setCreateByUserLogin("dcarvajal");
+        partyDto.setLastModifiedDate(new Date());
+        partyDto.setLastModifiedByUserLogin("dcarvajal");
+
+        boolean isSaved = partyDao.saveParty(partyDto);
+        Assert.assertTrue(isSaved);
+        boolean isSavedPerson = partyDao.saveGroup(partyDto);
         Assert.assertTrue(isSavedPerson);
     }
 

@@ -5,11 +5,11 @@ import lombok.Value;
 @Value
 public class Role {
 	
-    private final Identifier roleId;
+    private final UserTypeIdentifier roleId;
     private final Type roleType;
     private final String roleDescription;
     
-    public Role(Identifier roleId, Type roleType, String roleDescription) {
+    public Role(UserTypeIdentifier roleId, Type roleType, String roleDescription) {
     	this.roleId = roleId;
     	this.roleType = roleType;
     	this.roleDescription = roleDescription;

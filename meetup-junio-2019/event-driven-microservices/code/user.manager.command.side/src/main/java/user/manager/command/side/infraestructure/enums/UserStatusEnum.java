@@ -2,23 +2,23 @@ package user.manager.command.side.infraestructure.enums;
 
 import java.util.HashMap;
 
-public enum PartyStatusEnum {
+public enum UserStatusEnum {
 
 	ENABLED("ENABLED", "Enabled"),
 	DISABLED("DISABLED", "Disabled");
 
 
-    private final String partyStatusId;
+    private final String statusId;
     private final String description;
 
-	private PartyStatusEnum(String partyStatusId, String description) {
-		this.partyStatusId = partyStatusId;
+	private UserStatusEnum(String userStatusId, String description) {
+		this.statusId = userStatusId;
 		this.description = description;
 	}
 
 
-    public String getPartyStatusId() {
-		return partyStatusId;
+    public String getStatusId() {
+		return statusId;
 	}
 
 
@@ -29,8 +29,8 @@ public enum PartyStatusEnum {
 
 	public static HashMap<String, String> getHashMapValues() {
         HashMap<String, String> hashMap = new HashMap<String, String>();
-        for (PartyStatusEnum e : PartyStatusEnum.values()) {
-            hashMap.put(e.getPartyStatusId(), e.getDescription());
+        for (UserStatusEnum e : UserStatusEnum.values()) {
+            hashMap.put(e.getStatusId(), e.getDescription());
         }
         return hashMap;
     }

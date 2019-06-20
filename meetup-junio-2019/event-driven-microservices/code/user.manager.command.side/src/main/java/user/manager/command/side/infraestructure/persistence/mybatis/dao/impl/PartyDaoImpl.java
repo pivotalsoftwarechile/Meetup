@@ -4,8 +4,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import user.manager.command.side.infraestructure.dto.PartyDto;
+import user.manager.command.side.infraestructure.enums.UserStatusEnum;
 import user.manager.command.side.infraestructure.persistence.mybatis.dao.PartyDao;
 import user.manager.command.side.infraestructure.persistence.mybatis.mapper.PartyMapper;
+
+import java.util.Date;
 
 /**
  *
@@ -46,6 +49,11 @@ public class PartyDaoImpl implements PartyDao {
         int rowAffected;
         boolean isSaved = false;
         try {
+            // default values
+            partyDto.setCreatedDate(new Date());
+            partyDto.setCreateByUserLogin(""); // TODO define with user context
+            partyDto.setStatusId(UserStatusEnum.ENABLED.getStatusId());
+            // save party
             rowAffected = partyMapper.saveParty(partyDto);
             if(rowAffected == 1){
                 isSaved = true;
@@ -70,6 +78,10 @@ public class PartyDaoImpl implements PartyDao {
         int rowAffected;
         boolean isSaved = false;
         try {
+            // default values
+            partyDto.setLastModifiedDate(new Date());
+            partyDto.setLastModifiedByUserLogin(""); // TODO define with user context
+
             rowAffected = partyMapper.savePerson(partyDto);
             if(rowAffected == 1){
                 isSaved = true;

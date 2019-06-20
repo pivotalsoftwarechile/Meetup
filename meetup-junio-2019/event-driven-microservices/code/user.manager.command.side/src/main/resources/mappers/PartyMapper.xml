@@ -8,50 +8,53 @@
 			NEXTVAL('PARTY_ID_SEQ')				
 	</select>
 	
-	<insert id="saveParty"
-				 parameterType="user.manager.command.side.infraestructure.dto.PartyDto">
-    	INSERT INTO PARTY (PARTY_ID,
-    					   PARTY_TYPE_ID,    					    
-    					   DESCRIPTION,
-    					   STATUS_ID,
-						   CREATED_DATE,
-						   CREATED_BY_USER_LOGIN,
-						   LAST_MODIFIED_DATE,
-						   LAST_MODIFIED_BY_USER_LOGIN)
-    	VALUES (#{partyId,jdbcType=BIGINT},
-    		    #{partyType,jdbcType=VARCHAR},
-    		    #{description,jdbcType=VARCHAR},
-    		    #{statusId,jdbcType=VARCHAR},
-				#{createdDate,jdbcType=TIMESTAMP},
-				#{createByUserLogin,jdbcType=VARCHAR},
-				#{lastModifiedDate,jdbcType=TIMESTAMP},
-				#{lastModifiedByUserLogin,jdbcType=VARCHAR})
+	<insert id="saveParty" parameterType="user.manager.command.side.infraestructure.dto.PartyDto">
+		<![CDATA[
+    		INSERT INTO PARTY (PARTY_ID,
+    						   PARTY_TYPE_ID,
+    						   DESCRIPTION,
+    						   STATUS_ID,
+							   CREATED_DATE,
+						   	   CREATED_BY_USER_LOGIN,
+						   	   LAST_MODIFIED_DATE,
+						   	   LAST_MODIFIED_BY_USER_LOGIN)
+    		VALUES (#{partyId,jdbcType=BIGINT},
+    			    #{partyType,jdbcType=VARCHAR},
+    		    	#{description,jdbcType=VARCHAR},
+    		    	#{statusId,jdbcType=VARCHAR},
+					#{createdDate,jdbcType=TIMESTAMP},
+					#{createByUserLogin,jdbcType=VARCHAR},
+					#{lastModifiedDate,jdbcType=TIMESTAMP},
+					#{lastModifiedByUserLogin,jdbcType=VARCHAR})
+		]]>
    </insert>
   
-   <insert id="savePerson" 
-   				parameterType="user.manager.command.side.infraestructure.dto.PartyDto">
-    	INSERT INTO PERSON (PARTY_ID,
-    					   RUN,
-    					   FIRST_NAME,
-    					   LAST_NAME,
-    					   COMMENTS) 
-    	VALUES (#{partyId,jdbcType=BIGINT},
-    		    #{socialIdentifier,jdbcType=VARCHAR},    		     
-    		    #{firstName,jdbcType=VARCHAR},
-    		    #{lastName,jdbcType=VARCHAR},
-    		    #{comments,jdbcType=VARCHAR})
+   <insert id="savePerson" parameterType="user.manager.command.side.infraestructure.dto.PartyDto">
+	   <![CDATA[
+    		INSERT INTO PERSON (PARTY_ID,
+    						    RUN,
+    						    FIRST_NAME,
+    					   		LAST_NAME,
+    					   		COMMENTS)
+    		VALUES (#{partyId,jdbcType=BIGINT},
+    			    #{socialIdentifier,jdbcType=VARCHAR},
+    		    	#{firstName,jdbcType=VARCHAR},
+    		    	#{lastName,jdbcType=VARCHAR},
+    		    	#{comments,jdbcType=VARCHAR})
+    	]]>
    </insert>  
    
-   <insert id="saveGroup" 
-   				parameterType="user.manager.command.side.infraestructure.dto.PartyDto">
-    	INSERT INTO PARTY_GROUP (PARTY_ID,
-    					   		 RUT,
-    					   		 GROUP_NAME,    					   		 
-    					   		 COMMENTS) 
-    	VALUES (#{partyId,jdbcType=BIGINT},
-    		    #{socialIdentifier,jdbcType=VARCHAR},    		     
-    		    #{groupName,jdbcType=VARCHAR},    		    
-    		    #{comments,jdbcType=VARCHAR})
+   <insert id="saveGroup" parameterType="user.manager.command.side.infraestructure.dto.PartyDto">
+	   <![CDATA[
+    		INSERT INTO PARTY_GROUP (PARTY_ID,
+    						   		 RUT,
+    						   		 GROUP_NAME,
+    					   			 COMMENTS)
+    		VALUES (#{partyId,jdbcType=BIGINT},
+    			    #{socialIdentifier,jdbcType=VARCHAR},
+    		    	#{groupName,jdbcType=VARCHAR},
+    		    	#{comments,jdbcType=VARCHAR})
+    	]]>
    </insert>  
 	
 </mapper>

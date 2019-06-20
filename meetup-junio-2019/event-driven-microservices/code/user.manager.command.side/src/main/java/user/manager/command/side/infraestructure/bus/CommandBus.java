@@ -5,6 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import user.manager.command.side.application.aggregate.impl.UserAggregateImpl;
+import user.manager.command.side.application.command.CreateUserCommand;
+import user.manager.command.side.application.command.RemoveUserCommand;
+import user.manager.command.side.application.command.UpdateUserCommand;
 
 @Slf4j
 @Component
@@ -14,5 +17,16 @@ public class CommandBus implements Bus {
     private UserAggregateImpl userAggregate;
 
 
+    public void handle(CreateUserCommand command){
+        userAggregate.handle(command);
+    }
 
+    public void handle(UpdateUserCommand command){
+        userAggregate.handle(command);
+    }
+
+
+    public void handle(RemoveUserCommand command){
+        userAggregate.handle(command);
+    }
 }

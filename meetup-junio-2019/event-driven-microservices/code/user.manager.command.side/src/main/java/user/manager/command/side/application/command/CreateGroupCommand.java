@@ -3,10 +3,9 @@ package user.manager.command.side.application.command;
 import lombok.Value;
 
 @Value
-public class UpdateUserCommand {
-	public String nationalSingleRole;
-	public String firstName;
-	public String lastName;
+public class CreateGroupCommand {
+	public String tributarySingleRole;
+	public String groupName;
 	public String cityId;
 	public String comuneId;
 	public String regionId;

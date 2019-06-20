@@ -1,10 +1,8 @@
 package user.manager.command.side.application.command;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Value;
 
-@Getter
-@Setter
+@Value
 public class CreateUserCommand {
 	public String nationalSingleRole;
 	public String firstName;
@@ -13,7 +11,4 @@ public class CreateUserCommand {
 	public String comuneId;
 	public String regionId;
 	public String country;
-	public String siteOfProduction;
-	public String globalGapNumber;
-	
 }

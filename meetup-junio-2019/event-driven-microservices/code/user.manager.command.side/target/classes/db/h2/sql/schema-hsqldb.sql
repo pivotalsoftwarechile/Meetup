@@ -2,59 +2,11 @@
 --                                                TABLES
 -------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------
---  SCHEMA FOR TABLE ENUMERATION_TYPE
--------------------------------------------------------------------------------------------------------------------
-  CREATE TABLE ENUMERATION_TYPE (
-  				ENUM_TYPE_ID VARCHAR(20) NOT NULL, 
-				PARENT_TYPE_ID VARCHAR(20),
-				DESCRIPTION VARCHAR(255),				
-  CONSTRAINT ENUM_TYPE_PK PRIMARY KEY (ENUM_TYPE_ID),
-  CONSTRAINT ENUM_TYPE_PAR FOREIGN KEY (PARENT_TYPE_ID)
-			REFERENCES ENUMERATION_TYPE (ENUM_TYPE_ID));
-   
--------------------------------------------------------------------------------------------------------------------
---  SCHEMA FOR TABLE ENUMERATION
--------------------------------------------------------------------------------------------------------------------
-  CREATE TABLE ENUMERATION (
-  				ENUM_ID VARCHAR(20) NOT NULL, 
-				ENUM_TYPE_ID VARCHAR(20),
-				ENUM_CODE VARCHAR(60),
-				SEQUENCE_ID VARCHAR(20),				
-				DESCRIPTION VARCHAR(255),
-  CONSTRAINT ENUM_ID_PK PRIMARY KEY (ENUM_ID),
-  CONSTRAINT ENUM_TO_TYPE FOREIGN KEY (ENUM_TYPE_ID)
-			REFERENCES ENUMERATION_TYPE (ENUM_TYPE_ID));
-			
--------------------------------------------------------------------------------------------------------------------
---  SCHEMA FOR TABLE STATUS_TYPE
--------------------------------------------------------------------------------------------------------------------
-  CREATE TABLE STATUS_TYPE (
-  				STATUS_TYPE_ID VARCHAR(20) NOT NULL, 
-				PARENT_TYPE_ID VARCHAR(20),
-				DESCRIPTION VARCHAR(255),				
-  CONSTRAINT STATUS_TYPE_PK PRIMARY KEY (STATUS_TYPE_ID),
-  CONSTRAINT STATUS_TYPE_PAR FOREIGN KEY (PARENT_TYPE_ID)
-			REFERENCES STATUS_TYPE (STATUS_TYPE_ID));
-			
--------------------------------------------------------------------------------------------------------------------
---  SCHEMA FOR TABLE STATUS_ITEM
--------------------------------------------------------------------------------------------------------------------
-  CREATE TABLE STATUS_ITEM (
-  				STATUS_ID VARCHAR(20) NOT NULL, 
-				STATUS_TYPE_ID VARCHAR(20),
-				STATUS_CODE VARCHAR(60),
-				SEQUENCE_ID VARCHAR(20),				
-				DESCRIPTION VARCHAR(255),
-  CONSTRAINT STATUS_ITEM_PK PRIMARY KEY (STATUS_ID),
-  CONSTRAINT STATUS_TO_TYPE FOREIGN KEY (STATUS_TYPE_ID)
-			REFERENCES STATUS_TYPE (STATUS_TYPE_ID));
-
--------------------------------------------------------------------------------------------------------------------
 --  SCHEMA FOR TABLE PERSON
 -------------------------------------------------------------------------------------------------------------------
   CREATE TABLE PERSON (
   				PARTY_ID BIGINT NOT NULL,
-				RUN VARCHAR(9), 
+				RUN VARCHAR(10),
 				SALUTATION VARCHAR(100), 
 				FIRST_NAME VARCHAR(100) NOT NULL, 
 				MIDDLE_NAME VARCHAR(100),
@@ -86,7 +38,7 @@
 -------------------------------------------------------------------------------------------------------------------
   CREATE TABLE PARTY_GROUP (
   				PARTY_ID BIGINT NOT NULL, 
-				RUT VARCHAR(9), 
+				RUT VARCHAR(10),
 				GROUP_NAME VARCHAR(100), 
 				GROUP_NAME_LOCAL VARCHAR(100), 
 				OFFICE_SITE_NAME VARCHAR(100), 
@@ -126,7 +78,7 @@
     -- CONSTRAINT PERSON_PARTY_FK FOREIGN KEY (PARTY_ID)
 			-- REFERENCES PERSON (PARTY_ID),
 	-- CONSTRAINT PARTY_GRP_PARTY_FK FOREIGN KEY (PARTY_ID)
-			-- REFERENCES PARTY_GROUP (PARTY_ID)); 
+			-- REFERENCES PARTY_GROUP (PARTY_ID));
 	CONSTRAINT PARTY_PTY_TYP_FK FOREIGN KEY (PARTY_TYPE_ID)
 			REFERENCES PARTY_TYPE (PARTY_TYPE_ID)); 			
    --
