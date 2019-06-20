@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import user.manager.command.side.application.command.CreateGroupCommand;
 import user.manager.command.side.application.command.CreateUserCommand;
-import user.manager.command.side.application.command.RemoveUserCommand;
-import user.manager.command.side.application.command.UpdateUserCommand;
 import user.manager.command.side.domain.aggregate.model.user.*;
 import user.manager.command.side.infraestructure.enums.UserTypeEnum;
 
@@ -80,13 +78,5 @@ public class UserAggregateImpl extends UserAggregate {
         }else{
             //TODO returns fail message
         }
-    }
-
-    public void handle(UpdateUserCommand command) {
-        //TODO to implement
-    }
-
-    public void handle(RemoveUserCommand command) {
-        //TODO to implement
     }
 }

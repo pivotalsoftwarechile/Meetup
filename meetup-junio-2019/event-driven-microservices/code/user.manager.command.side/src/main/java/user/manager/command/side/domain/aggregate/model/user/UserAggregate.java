@@ -1,9 +1,7 @@
 package user.manager.command.side.domain.aggregate.model.user;
 import user.manager.command.side.application.aggregate.Aggregate;
-import user.manager.command.side.application.command.CreateGroupCommand;
-import user.manager.command.side.application.command.CreateUserCommand;
-import user.manager.command.side.application.command.RemoveUserCommand;
-import user.manager.command.side.application.command.UpdateUserCommand;
+import user.manager.command.side.application.command.*;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -12,13 +10,16 @@ public abstract class UserAggregate implements Aggregate {
     public void handle(CreateUserCommand command) {
     }
 
-    public void handle(CreateGroupCommand command) {
-    }
-
     public void handle(UpdateUserCommand command) {
     }
 
     public void handle(RemoveUserCommand command) {
+    }
+
+    public void handle(UpdateGroupCommand command) {
+    }
+
+    public void handle(RemoveGroupCommand command) {
     }
 
     public User makePerson(Identifier userId, Type userType, SocialIdentifier socialIdentifier, String firstName, String lastName) {
