@@ -16,6 +16,9 @@ public abstract class UserAggregate implements Aggregate {
     public void handle(RemoveUserCommand command) {
     }
 
+    public void handle(CreateGroupCommand command) {
+    }
+
     public void handle(UpdateGroupCommand command) {
     }
 
