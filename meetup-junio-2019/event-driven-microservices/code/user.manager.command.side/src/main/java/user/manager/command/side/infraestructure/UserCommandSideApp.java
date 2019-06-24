@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PartyCommandSideApp {
+public class UserCommandSideApp {
 
 	public static void main(String args[]) {
-		SpringApplication.run(PartyCommandSideApp.class, args);
+		SpringApplication.run(UserCommandSideApp.class, args);
 	}
 }

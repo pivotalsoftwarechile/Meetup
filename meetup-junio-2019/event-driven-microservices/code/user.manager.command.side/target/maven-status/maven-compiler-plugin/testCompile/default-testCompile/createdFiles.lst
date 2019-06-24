@@ -1,3 +1,4 @@
-user\manager\command\side\domain\aggregate\model\user\IdentifierTest.class
-user\manager\command\side\infraestructure\impl\PartyDaoITest.class
 user\manager\command\side\domain\aggregate\model\user\NationalSingleRoleTest.class
+user\manager\command\side\domain\aggregate\model\user\IdentifierTest.class
+user\manager\command\side\application\repository\impl\UserRepositoryITest.class
+user\manager\command\side\infraestructure\impl\PartyDaoITest.class

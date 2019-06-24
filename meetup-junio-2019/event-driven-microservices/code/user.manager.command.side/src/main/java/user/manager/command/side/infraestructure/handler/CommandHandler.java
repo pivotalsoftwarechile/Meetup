@@ -5,7 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 import user.manager.command.side.application.command.CreateUserCommand;
 
 @Component
-public class PartyCommandHandler {	
+public class CommandHandler {
 
 	@Transactional
 	public void handler(CreateUserCommand command) {

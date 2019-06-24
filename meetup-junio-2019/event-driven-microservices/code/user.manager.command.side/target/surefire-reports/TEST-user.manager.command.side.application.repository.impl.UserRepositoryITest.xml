@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="user.manager.command.side.domain.aggregate.model.user.NationalSingleRoleTest" time="0" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="user.manager.command.side.application.repository.impl.UserRepositoryITest" time="1.242" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2018.1.4"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,10 +62,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="user.manager.command.side.domain.aggregate.model.user.NationalSingleRoleTest" name="testClone" time="0"/>
-  <testcase classname="user.manager.command.side.domain.aggregate.model.user.NationalSingleRoleTest" name="testToString" time="0"/>
-  <testcase classname="user.manager.command.side.domain.aggregate.model.user.NationalSingleRoleTest" name="testOK" time="0"/>
-  <testcase classname="user.manager.command.side.domain.aggregate.model.user.NationalSingleRoleTest" name="testIllegalArgumentException1" time="0"/>
-  <testcase classname="user.manager.command.side.domain.aggregate.model.user.NationalSingleRoleTest" name="testIllegalArgumentException2" time="0"/>
-  <testcase classname="user.manager.command.side.domain.aggregate.model.user.NationalSingleRoleTest" name="testIllegalArgumentException3" time="0"/>
+  <testcase classname="user.manager.command.side.application.repository.impl.UserRepositoryITest" name="addGroup" time="1.224"/>
+  <testcase classname="user.manager.command.side.application.repository.impl.UserRepositoryITest" name="addPerson" time="0.011"/>
+  <testcase classname="user.manager.command.side.application.repository.impl.UserRepositoryITest" name="getUseId" time="0.007"/>
 </testsuite>

@@ -17,6 +17,7 @@ public class UserAggregateImpl extends UserAggregate {
     @Autowired
     private UserRepository userRepository;
 
+
     @Override
     public void handle(CreateUserCommand command) {
         Optional<Identifier> identifier = userRepository.getUserId();
@@ -41,6 +42,7 @@ public class UserAggregateImpl extends UserAggregate {
             //
             if(addPerson.isPresent()){
                 //TODO return success message
+                //onEvent(new CreatedUserEvent(.....));
             }else{
                 //TODO returns fail message
             }
@@ -56,14 +58,14 @@ public class UserAggregateImpl extends UserAggregate {
             // identifier
             UserIdentifier userIdentifier = (UserIdentifier) identifier.get();
             // socialIdentifier
-            SocialIdentifier nationalSingleRole = new TributarySingleRole(command.getTributarySingleRole());
+            SocialIdentifier tributarySingleRole = new TributarySingleRole(command.getTributarySingleRole());
             // userType
             Type userType = new Type(new UserTypeIdentifier(UserTypeEnum.PARTY_GROUP.getTypeId()));
             // user group
             User group =
                     makeGroup(userIdentifier, // identifier
                               userType, // userType
-                              nationalSingleRole, // socialIdentifier
+                              tributarySingleRole, // socialIdentifier
                               command.getGroupName(), // groupName
                               Optional.empty(), // roles
                               Optional.empty()); // geo

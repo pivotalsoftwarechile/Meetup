@@ -62,4 +62,9 @@ public abstract class UserAggregate implements Aggregate {
     public Geo makeGeographicUbication(Identifier geoId, Location city, Location comune, Location province, Location region, Location country, Optional<Double> latitude, Optional<Double> longitude) {
         return new Geo(geoId, city, comune, province, region, country, latitude, longitude);
     }
+
+
+    /*public void onEvent(UserCreated event){
+
+    }*/
 }
