@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Value;
 
 @Value
-public class CreatedUserEvent implements Event {
+public class CreatedPersonEvent implements Event {
 
 	@JsonProperty("nationalSingleRole")
 	public String nationalSingleRole;

@@ -6,7 +6,7 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import user.manager.command.side.application.event.CreatedUserEvent;
+import user.manager.command.side.application.event.CreatedPersonEvent;
 import user.manager.command.side.infraestructure.converter.EventConverter;
 
 @Slf4j
@@ -19,7 +19,7 @@ public class EventHandler {
 	@Autowired
 	private EventConverter eventConverter;
 
-	public void handler(CreatedUserEvent event) {
+	public void handler(CreatedPersonEvent event) {
 		try {
 			mqttGateway.publishWithOptions(eventConverter.convert(event));
 

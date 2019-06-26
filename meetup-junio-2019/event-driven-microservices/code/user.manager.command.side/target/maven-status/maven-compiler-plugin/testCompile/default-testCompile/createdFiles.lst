@@ -1,4 +1,8 @@
+user\manager\command\side\infraestructure\MqttGatewayTestConfig.class
 user\manager\command\side\domain\aggregate\model\user\NationalSingleRoleTest.class
 user\manager\command\side\domain\aggregate\model\user\IdentifierTest.class
+user\manager\command\side\infraestructure\handler\EventHandlerITest.class
+user\manager\command\side\infraestructure\api\UserControllerITest.class
 user\manager\command\side\application\repository\impl\UserRepositoryITest.class
 user\manager\command\side\infraestructure\impl\PartyDaoITest.class
+user\manager\command\side\infraestructure\integration\mqtt\PublisherListener.class

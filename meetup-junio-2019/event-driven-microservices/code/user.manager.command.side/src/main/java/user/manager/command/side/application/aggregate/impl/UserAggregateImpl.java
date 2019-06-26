@@ -3,10 +3,13 @@ package user.manager.command.side.application.aggregate.impl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import user.manager.command.side.application.command.CreateGroupCommand;
 import user.manager.command.side.application.command.CreateUserCommand;
+import user.manager.command.side.application.event.CreatedPersonEvent;
 import user.manager.command.side.domain.aggregate.model.user.*;
 import user.manager.command.side.infraestructure.enums.UserTypeEnum;
+import user.manager.command.side.infraestructure.handler.EventHandler;
 
 import java.util.Optional;
 
@@ -17,8 +20,12 @@ public class UserAggregateImpl extends UserAggregate {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private EventHandler eventHandler;
+
 
     @Override
+    @Transactional
     public void handle(CreateUserCommand command) {
         Optional<Identifier> identifier = userRepository.getUserId();
         if(identifier.isPresent()){
@@ -39,10 +46,13 @@ public class UserAggregateImpl extends UserAggregate {
                                Optional.empty()); // geo
             // add the user person
             Optional<User> addPerson = userRepository.addUser(person);
+
             //
             if(addPerson.isPresent()){
+                onEvent(new CreatedPersonEvent(
+                        addPerson.get().getSocialIdentifier().getIdentifier(), addPerson.get().getFirstName(), addPerson.get().getLastName()));
+
                 //TODO return success message
-                //onEvent(new CreatedUserEvent(.....));
             }else{
                 //TODO returns fail message
             }
@@ -80,5 +90,11 @@ public class UserAggregateImpl extends UserAggregate {
         }else{
             //TODO returns fail message
         }
+    }
+
+
+    @Override
+    public void onEvent(CreatedPersonEvent event){
+        eventHandler.handler(event);
     }
 }

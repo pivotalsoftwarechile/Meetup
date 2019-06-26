@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import user.manager.command.side.domain.aggregate.model.user.Identifier;
 import user.manager.command.side.domain.aggregate.model.user.User;
 import user.manager.command.side.domain.aggregate.model.user.UserRepository;
+import user.manager.command.side.domain.aggregate.model.user.UserTypeIdentifier;
 import user.manager.command.side.infraestructure.converter.IdentifierConverter;
 import user.manager.command.side.infraestructure.converter.FromUserConverter;
 import user.manager.command.side.infraestructure.dto.PartyDto;
@@ -39,7 +40,8 @@ public class UserRepositoryImpl implements UserRepository {
         Optional<User> newUser = Optional.empty();
         //
         boolean isAdd;
-        if (UserTypeEnum.PERSON.getTypeId().equals(user.getUserType().getTypeId())) {
+        UserTypeIdentifier userTypeIdentifier = (UserTypeIdentifier) user.getUserType().getTypeId();
+        if (UserTypeEnum.PERSON.getTypeId().equals(userTypeIdentifier.getIdentifier())) {
             PartyDto partyDto = fromUserConverter.convert(user);
             // TODO add transactional operation
             isAdd = partyDao.saveParty(partyDto);

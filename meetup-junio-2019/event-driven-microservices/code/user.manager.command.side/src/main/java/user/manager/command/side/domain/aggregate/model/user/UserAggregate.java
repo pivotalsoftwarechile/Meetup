@@ -1,6 +1,7 @@
 package user.manager.command.side.domain.aggregate.model.user;
 import user.manager.command.side.application.aggregate.Aggregate;
 import user.manager.command.side.application.command.*;
+import user.manager.command.side.application.event.CreatedPersonEvent;
 
 import java.util.List;
 import java.util.Optional;
@@ -63,8 +64,6 @@ public abstract class UserAggregate implements Aggregate {
         return new Geo(geoId, city, comune, province, region, country, latitude, longitude);
     }
 
-
-    /*public void onEvent(UserCreated event){
-
-    }*/
+    public void onEvent(CreatedPersonEvent event){
+    }
 }

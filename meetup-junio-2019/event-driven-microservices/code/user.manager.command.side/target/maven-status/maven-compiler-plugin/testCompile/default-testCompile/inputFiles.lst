@@ -1,4 +1,8 @@
-C:\git-repositories\Meetup\meetup-junio-2019\event-driven-microservices\code\user.manager.command.side\src\test\java\user\manager\command\side\domain\aggregate\model\user\NationalSingleRoleTest.java
-C:\git-repositories\Meetup\meetup-junio-2019\event-driven-microservices\code\user.manager.command.side\src\test\java\user\manager\command\side\application\repository\impl\UserRepositoryITest.java
-C:\git-repositories\Meetup\meetup-junio-2019\event-driven-microservices\code\user.manager.command.side\src\test\java\user\manager\command\side\domain\aggregate\model\user\IdentifierTest.java
-C:\git-repositories\Meetup\meetup-junio-2019\event-driven-microservices\code\user.manager.command.side\src\test\java\user\manager\command\side\infraestructure\impl\PartyDaoITest.java
+D:\sonda-documents\repositories\Meetup\meetup-junio-2019\event-driven-microservices\code\user.manager.command.side\src\test\java\user\manager\command\side\domain\aggregate\model\user\IdentifierTest.java
+D:\sonda-documents\repositories\Meetup\meetup-junio-2019\event-driven-microservices\code\user.manager.command.side\src\test\java\user\manager\command\side\infraestructure\api\UserControllerITest.java
+D:\sonda-documents\repositories\Meetup\meetup-junio-2019\event-driven-microservices\code\user.manager.command.side\src\test\java\user\manager\command\side\infraestructure\integration\mqtt\PublisherListener.java
+D:\sonda-documents\repositories\Meetup\meetup-junio-2019\event-driven-microservices\code\user.manager.command.side\src\test\java\user\manager\command\side\infraestructure\MqttGatewayTestConfig.java
+D:\sonda-documents\repositories\Meetup\meetup-junio-2019\event-driven-microservices\code\user.manager.command.side\src\test\java\user\manager\command\side\infraestructure\impl\PartyDaoITest.java
+D:\sonda-documents\repositories\Meetup\meetup-junio-2019\event-driven-microservices\code\user.manager.command.side\src\test\java\user\manager\command\side\infraestructure\handler\EventHandlerITest.java
+D:\sonda-documents\repositories\Meetup\meetup-junio-2019\event-driven-microservices\code\user.manager.command.side\src\test\java\user\manager\command\side\application\repository\impl\UserRepositoryITest.java
+D:\sonda-documents\repositories\Meetup\meetup-junio-2019\event-driven-microservices\code\user.manager.command.side\src\test\java\user\manager\command\side\domain\aggregate\model\user\NationalSingleRoleTest.java
