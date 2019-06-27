@@ -1,10 +1,11 @@
 package user.manager.command.side.infraestructure.converter;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import user.manager.command.side.application.event.Event;
+
+import java.io.IOException;
 
 
 /**
@@ -21,7 +22,7 @@ public class EventConverter implements Converter<Event, String> {
             ObjectMapper objectMapper = new ObjectMapper();
             to = objectMapper.writeValueAsString(event);
 
-        } catch (JsonProcessingException e) {
+        } catch (IOException e) {
             log.error(e.getMessage(), e);
         }
         return to;
