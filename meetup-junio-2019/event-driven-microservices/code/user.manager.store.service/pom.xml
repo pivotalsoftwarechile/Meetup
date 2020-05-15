@@ -19,7 +19,7 @@
 		<spring-boot.mybatis.version>2.0.0</spring-boot.mybatis.version>
 		<spring-swagger.version>2.8.0</spring-swagger.version>
 		<apache-commons-lang3.version>3.5</apache-commons-lang3.version>
-        <jackson-core.version>2.6.3</jackson-core.version>
+        <jackson-core.version>2.9.10.4</jackson-core.version>
         <user-manager-store-service.final.name>user-manager-store-service</user-manager-store-service.final.name>
         <user-manager-store-service.final.version>${project.version}</user-manager-store-service.final.version>
     </properties>
